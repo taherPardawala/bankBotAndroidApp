@@ -1,8 +1,8 @@
 import axios from 'axios';
 import store from '@/vuex';
 // const baseUri = window.location.protocol+"//"+window.location.host; //production url
-// const baseUri = "https://bankbot.tk/"; //android url
-const baseUri = 'http://localhost:5000';
+const baseUri = 'https://bankbot.tk'; //android url
+// const baseUri = 'http://localhost:5000';
 
 export default {
     baseUri : baseUri,
@@ -15,6 +15,7 @@ export default {
             })
             .catch(function (error) {
                 console.error(error);
+                return error;
             });
     },
     signupUser: (userdata) => {

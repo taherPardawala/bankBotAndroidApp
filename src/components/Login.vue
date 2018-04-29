@@ -38,10 +38,12 @@
         },
         methods: {
             async logUser() {
+                // alert('Before request is made '+http.baseUri)
                 let result = await http.login({
                     id: this.email,
                     password: this.password
                 });
+                // alert('After request is made '+result);
                 if (result.ok) {
                     if (result.accountType == 10) {
                         this.$store.commit('auth', result.token);
@@ -61,7 +63,7 @@
             },
         },
         created() {
-            console.log(window);
+            // alert('Hello World');
         }
     }
 </script>
